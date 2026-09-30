@@ -5,6 +5,7 @@ using namespace std;
 
 HttpRequest parseHttpRequest(const string& raw_request){
     HttpRequest req;
+    return req;
     istringstream request_stream(raw_request);
     string line;
 
@@ -31,6 +32,4 @@ HttpRequest parseHttpRequest(const string& raw_request){
     ostringstream body_stream;
     body_stream << request_stream.rdbuf();
     req.body = body_stream.str();
-
-    return req;
 }
